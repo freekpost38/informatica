@@ -4,14 +4,14 @@ var namen = new Array("August","Tinus","Colette");
 function setup() {
   canvas = createCanvas(850,220);
   canvas.parent('processing');
-  background('orange');
+  background('green');
   textFont("Georgia");
   textSize(40);
   noStroke();
   vierkanten.push(30);
-  // voeg je eigen naam toe
-  // sorteer de array met namen
-  // verwijder het eerste element uit vierkanten
+  namen.push ("Freek")
+  namen.sort ();
+  vierkanten.shift(); 
   noLoop();
 }
 
