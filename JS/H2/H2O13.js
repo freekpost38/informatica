@@ -1,5 +1,5 @@
-var aantalRijenRaster = 6;
-var aantalKolommenRaster = 9;
+var aantalRijenRaster = 12;
+var aantalKolommenRaster = 18;
 var celGrootte;
 
 var animatie = [];
@@ -12,11 +12,14 @@ var yJos = 300;
 
 function preload() {
   brug = loadImage("images/backgrounds/dame_op_brug_1800.jpg");
-  frame = loadImage("images/sprites/Jos100px/Jos_0.png");
+  for (var n = 0;n < aantalBeeldjes; n++) {
+    frame = loadImage("images/sprites/Jos100px/Jos_" + n + ".png");
+    animatie.push(frame)
+  }
 }
 
 function setup() {
-  canvas = createCanvas(900,600);
+  canvas = createCanvas(900, 600);
   canvas.parent('processing');
   frameRate(10);
   celGrootte = width / aantalKolommenRaster;
@@ -28,34 +31,36 @@ function draw() {
 
   if (keyIsDown(LEFT_ARROW)) {
     xJos -= celGrootte;
+    nummer = 2
   }
   if (keyIsDown(RIGHT_ARROW)) {
     xJos += celGrootte;
+    nummer = 1
   }
   if (keyIsDown(UP_ARROW)) {
-    yJos-=celGrootte;
+    yJos -= celGrootte;
+    nummer = 4
   }
   if (keyIsDown(DOWN_ARROW)) {
     yJos += celGrootte;
+    nummer = 5
   }
-  if (keyIsDown(LEFT_ARROW)) {
-    xJos -= celgrootte;
-    nummer = 2
-  }
+ 
   
-  xJos = constrain(xJos,0,width - celGrootte);
-  yJos = constrain(yJos,0,height - celGrootte);
-  
-  image(frame,xJos,yJos);
+
+  xJos = constrain(xJos, 0, width - celGrootte);
+  yJos = constrain(yJos, 0, height - celGrootte);
+
+  image(animatie[nummer], xJos, yJos);
 }
 
 function tekenRaster() {
   push();
   noFill();
   stroke('grey');
-  for (var rij = 0;rij < aantalRijenRaster;rij++) {
-    for (var kolom = 0;kolom < aantalKolommenRaster;kolom++) {
-      rect(kolom*celGrootte,rij*celGrootte,celGrootte,celGrootte);
+  for (var rij = 0; rij < aantalRijenRaster; rij++) {
+    for (var kolom = 0; kolom < aantalKolommenRaster; kolom++) {
+      rect(kolom * celGrootte, rij * celGrootte, celGrootte, celGrootte);
     }
   }
   pop();
