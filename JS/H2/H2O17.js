@@ -4,6 +4,7 @@ var kever = {
   x: 100,
   y: 150,
   sprite: null,
+  naam:"hans" ,
 
   beweeg() {
     this.x += round(random(-5,5));
