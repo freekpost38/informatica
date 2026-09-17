@@ -40,6 +40,7 @@ var raster = {
   },
   
   controleerRaak(mx,my,k,r) {
+    
     return false;
   },
   
