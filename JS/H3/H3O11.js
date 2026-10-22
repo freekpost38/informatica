@@ -106,7 +106,8 @@ class Tennis {
   }
   
   update() {
-    if (spel.actief) {
+    if (spel.actief)
+       spel.r.beweeg(); {
       if (this.r.raaktBal(this.b)) {
         this.b.reageerOpRacket(this.r);
       }
@@ -153,9 +154,7 @@ function keyTyped() {
   if (!spel.actief && keyCode == 32) {
     spel.actief = true;
   }
-  else {
-    spel.r.beweeg();
-  }
+  
 }
 
 /*  **********************************************************

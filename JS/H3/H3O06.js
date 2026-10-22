@@ -68,7 +68,7 @@ class Dobbelsteen {
 class Gokspel {
   constructor(s,d) {
     this.speler = s;
-    this.beginBudget = 5;
+    this.beginBudget = -5;
     this.speler.budget = null;
     this.beloningGoed = 5;
     this.strafFout = 1;

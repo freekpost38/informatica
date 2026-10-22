@@ -68,7 +68,7 @@ function draw() {
     if (ballenArray[b].aantalKerenGestuiterd==2) {
       if (ballenArray.length==score) {
         background('green');
-        text("Het is je gelukt! Je score is "+score+" :)",5,24);
+        text("je hebt gewonnen! Je score is "+score+" :)",5,24);
         noLoop();
       }
       else {
